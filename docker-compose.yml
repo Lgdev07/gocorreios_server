@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    container_name: gocorreios_server_app
+    build: .
+    command: go run main.go
+    ports:
+      - 8080:8080
+    restart: on-failure
+    volumes:
+      - .:/gocorreios_server

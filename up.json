@@ -1,0 +1,5 @@
+{
+  "name": "gocorreios-server",
+  "profile": "default",
+  "regions": ["us-west-2"]
+}
