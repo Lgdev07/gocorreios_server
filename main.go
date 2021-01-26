@@ -6,6 +6,7 @@ import (
 	"github.com/Lgdev07/gocorreios_server/config"
 	"github.com/Lgdev07/gocorreios_server/router"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 )
 
@@ -25,7 +26,9 @@ func main() {
 		},
 	})
 
-	// app.Use(cors.New())
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "https://gocorreiosweb.vercel.app/",
+	}))
 
 	app.Use(logger.New())
 
