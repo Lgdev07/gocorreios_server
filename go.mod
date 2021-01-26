@@ -1,6 +1,6 @@
 module github.com/Lgdev07/gocorreios_server
 
-go 1.15
+go 1.14
 
 require (
 	github.com/Lgdev07/gocorreios v0.0.0-20201110001444-f26270c457ee
