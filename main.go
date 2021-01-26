@@ -26,9 +26,7 @@ func main() {
 		},
 	})
 
-	app.Use(cors.New(cors.Config{
-		AllowOrigins: "https://gocorreiosweb.vercel.app/",
-	}))
+	app.Use(cors.New())
 
 	app.Use(logger.New())
 
