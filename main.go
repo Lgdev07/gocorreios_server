@@ -5,20 +5,9 @@ import (
 
 	"github.com/Lgdev07/gocorreios_server/config"
 	"github.com/Lgdev07/gocorreios_server/router"
-	"github.com/apex/log"
-	"github.com/apex/log/handlers/json"
-	"github.com/apex/log/handlers/text"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 )
-
-func init() {
-	if os.Getenv("UP_STAGE") == "" {
-		log.SetHandler(text.Default)
-	} else {
-		log.SetHandler(json.Default)
-	}
-}
 
 func main() {
 	config.LoadDotEnv()
