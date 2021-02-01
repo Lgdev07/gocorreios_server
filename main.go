@@ -27,7 +27,6 @@ func main() {
 	})
 
 	app.Use(cors.New())
-
 	app.Use(logger.New())
 
 	router.SetupRoutes(app)
