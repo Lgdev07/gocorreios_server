@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
