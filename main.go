@@ -3,39 +3,39 @@ package main
 import (
 	"os"
 
-	"github.com/Lgdev07/gocorreios_server/config"
-	"github.com/Lgdev07/gocorreios_server/router"
-	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/Lgdev07/gocorreios_server/application/rest/handler"
+	"github.com/Lgdev07/gocorreios_server/domain/usecase"
+	"github.com/Lgdev07/gocorreios_server/infrastructure/repository"
+	"github.com/Lgdev07/gocorreios_server/infrastructure/services"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
-	config.LoadDotEnv()
+	e := echo.New()
 
-	app := fiber.New(fiber.Config{
-		ErrorHandler: func(c *fiber.Ctx, err error) error {
-			code := fiber.StatusInternalServerError
-			if e, ok := err.(*fiber.Error); ok {
-				code = e.Code
-			}
-			c.Set(fiber.HeaderContentType, fiber.MIMETextPlainCharsetUTF8)
-			return c.Status(code).JSON(fiber.Map{
-				"error": err.Error(),
-			})
-		},
-	})
+	InitRoutes(e)
 
-	app.Use(cors.New())
-	app.Use(logger.New())
-
-	router.SetupRoutes(app)
+	e.Use(middleware.CORS())
 
 	port := os.Getenv("PORT")
-
 	if port == "" {
 		port = "8080"
 	}
 
-	app.Listen(":" + port)
+	e.Logger.Fatal(e.Start(":" + port))
+}
+
+func InitRoutes(e *echo.Echo) {
+	fareRepository := repository.GoCorreiosRepository{
+		Repo: &services.GoCorreiosService{},
+	}
+	fareUseCase := usecase.FareUseCase{
+		FareRepository: &fareRepository,
+	}
+	fareHandler := handler.FareHandler{
+		FareUseCase: fareUseCase,
+	}
+
+	e.POST("/fares", fareHandler.Show)
 }
