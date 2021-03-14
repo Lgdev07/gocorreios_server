@@ -3,7 +3,6 @@ package repository
 import (
 	"strconv"
 
-	"github.com/Lgdev07/gocorreios"
 	"github.com/Lgdev07/gocorreios/fare"
 	"github.com/Lgdev07/gocorreios_server/domain/model"
 )
