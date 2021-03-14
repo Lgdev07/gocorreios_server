@@ -39,14 +39,3 @@ func (gc *GoCorreiosRepository) GetFare(fareModel model.Fare) ([]byte, error) {
 
 	return result, nil
 }
-
-type GoCorreiosCommunication struct{}
-
-func (gcc *GoCorreiosCommunication) Fare(fareInterf fare.Interface) ([]byte, error) {
-	result, err := gocorreios.Fare(fareInterf)
-	if err != nil {
-		return nil, err
-	}
-
-	return result, nil
-}
