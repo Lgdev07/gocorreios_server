@@ -24,6 +24,9 @@ jobs:
       - name: Test
         run: go test -v ./...
 
+      - name: GH Release
+        uses: softprops/action-gh-release@v0.1.5
+
   sonarcloud:
     needs: build
     name: SonarCloud
