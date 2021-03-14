@@ -46,10 +46,22 @@
 
   POST - Create Fare:
   - **/fares** <br>
-  Expected Json Body:<br>
+  Expected Json Body Request:<br>
   ```
   {
-    "service": "SEDEEEEEX",
+    "service": "SEDEX",
+		"cep_destination": "09981380",
+		"cep_origin": "09981380",
+		"height": "15",
+		"lenght": "15",
+		"weight": "1",
+		"width": "15",
+  }
+  ```
+  Expected Json Response:<br>
+  ```
+  {
+    "service": "SEDEX",
 		"price": "22,50",
 		"days_for_delivery": "3",
 		"deliver_home": "N",

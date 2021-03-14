@@ -12,8 +12,6 @@ import (
 type MockGoCorreiosRepository struct{}
 
 func (mockRepo *MockGoCorreiosRepository) Fare(fareInterf fare.Interface) ([]byte, error) {
-	print("passei aqui")
-
 	jsonResponse := `{
 		"service": "SEDEEEEEX",
 		"price": "22,50",

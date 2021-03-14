@@ -3,7 +3,6 @@ package repository
 import (
 	"strconv"
 
-	"github.com/Lgdev07/gocorreios"
 	"github.com/Lgdev07/gocorreios/fare"
 	"github.com/Lgdev07/gocorreios_server/domain/model"
 )
@@ -33,17 +32,6 @@ func (gc *GoCorreiosRepository) GetFare(fareModel model.Fare) ([]byte, error) {
 	}
 
 	result, err := gc.Repo.Fare(params)
-	if err != nil {
-		return nil, err
-	}
-
-	return result, nil
-}
-
-type GoCorreiosCommunication struct{}
-
-func (gcc *GoCorreiosCommunication) Fare(fareInterf fare.Interface) ([]byte, error) {
-	result, err := gocorreios.Fare(fareInterf)
 	if err != nil {
 		return nil, err
 	}

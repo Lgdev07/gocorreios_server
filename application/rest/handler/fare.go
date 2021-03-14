@@ -19,9 +19,6 @@ func (f *FareHandler) Show(c echo.Context) error {
 		return err
 	}
 
-	print("")
-	print("passei aqui")
-	print("")
 	result, err := f.FareUseCase.GetFare(*fare)
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, map[string]string{
