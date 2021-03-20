@@ -1,5 +1,7 @@
 github.com/Lgdev07/gocorreios v0.0.0-20201110001444-f26270c457ee h1:WsCbfjhEDd+gJPzgTOnfuHxBs2jewnMqieskLrintmE=
 github.com/Lgdev07/gocorreios v0.0.0-20201110001444-f26270c457ee/go.mod h1:dLXKWZcZi6Cn+R40JoeRWi4kV0/6eMaU3+EowT68WYY=
+github.com/Lgdev07/gocorreios v0.0.0-20210318011358-8c18bcfa4040 h1:e1SSGhG7R4XZIcJochxVkZe3L5DY8P+aFqHBoRnc6bA=
+github.com/Lgdev07/gocorreios v0.0.0-20210318011358-8c18bcfa4040/go.mod h1:8F4VB0oDSYBAXY9MuM7e6zInbYE2n43dYCZhtmwv7+U=
 github.com/PuerkitoBio/goquery v1.5.1/go.mod h1:GsLWisAFVj4WgDibEWF4pvYnkVQBpKBKeU+7zCJoLcc=
 github.com/andybalholm/brotli v1.0.0 h1:7UCwP93aiSfvWpapti8g88vVVGp2qqtGyePsSuDafo4=
 github.com/andybalholm/brotli v1.0.0/go.mod h1:loMXtMfwqflxFJPmdbJO0a3KNoPuLBgiu3qAvBg8x/Y=

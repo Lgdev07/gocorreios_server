@@ -15,3 +15,12 @@ func (gcc *GoCorreiosService) Fare(fareInterf fare.Interface) ([]byte, error) {
 
 	return result, nil
 }
+
+func (gcc *GoCorreiosService) Tracking(cepsList []string) ([]byte, error) {
+	result, err := gocorreios.Tracking(cepsList)
+	if err != nil {
+		return nil, err
+	}
+
+	return result, nil
+}

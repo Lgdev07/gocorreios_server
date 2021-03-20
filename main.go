@@ -4,9 +4,6 @@ import (
 	"os"
 
 	"github.com/Lgdev07/gocorreios_server/application/rest/handler"
-	"github.com/Lgdev07/gocorreios_server/domain/usecase"
-	"github.com/Lgdev07/gocorreios_server/infrastructure/repository"
-	"github.com/Lgdev07/gocorreios_server/infrastructure/services"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -27,15 +24,9 @@ func main() {
 }
 
 func InitRoutes(e *echo.Echo) {
-	fareRepository := repository.GoCorreiosRepository{
-		Repo: &services.GoCorreiosService{},
-	}
-	fareUseCase := usecase.FareUseCase{
-		FareRepository: &fareRepository,
-	}
-	fareHandler := handler.FareHandler{
-		FareUseCase: fareUseCase,
-	}
+	fareHandler := handler.NewFareHandler()
+	trackingHandler := handler.NewTrackingHandler()
 
 	e.POST("/fares", fareHandler.Show)
+	e.POST("/trackings", trackingHandler.Show)
 }

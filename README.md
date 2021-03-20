@@ -70,6 +70,84 @@
   }
   ```
 
+  POST - Create Tracking:
+  - **/trackings** <br>
+  Expected Json Body Request:<br>
+  ```
+  {
+    "codes": ["ON732404576BR", "ON732404576BR"]
+  }
+  ```
+  Expected Json Response:<br>
+  ```
+[
+  {
+    "category": "SEDEX",
+    "error": "",
+    "history": [
+      {
+        "date": "03/03/2021 - 14:38",
+        "description": "Objeto em trânsito - por favor aguarde",
+        "destination": "CTE SAUDE - RUA DO BOQUEIRAO, 320, SAUDE - SAO PAULO/SP",
+        "detail": "",
+        "origin": "AGF SHOPPING CAMPO LIMPO - ESTRADA DO CAMPO LIMPO, 459, PIRAJUSSARA - SAO PAULO/SP",
+        "status": 1,
+        "type": "RO"
+      },
+      {
+        "date": "03/03/2021 - 14:05",
+        "description": "Objeto postado",
+        "destination": "",
+        "detail": "",
+        "origin": "AGF SHOPPING CAMPO LIMPO - ESTRADA DO CAMPO LIMPO, 459, PIRAJUSSARA - SAO PAULO/SP",
+        "status": 1,
+        "type": "PO"
+      }
+    ],
+    "last_date": "05/03/2021 - 14:04",
+    "last_description": "Objeto entregue ao destinatário",
+    "last_destination": "",
+    "last_detail": "",
+    "last_origin": "CDD EXEMPLO",
+    "last_status": 1,
+    "last_type": "BDE",
+    "number": "ON732404576BR"
+  },
+  {
+    "category": "SEDEX",
+    "error": "",
+    "history": [
+      {
+        "date": "03/03/2021 - 14:38",
+        "description": "Objeto em trânsito - por favor aguarde",
+        "destination": "CTE SAUDE - RUA DO BOQUEIRAO, 320, SAUDE - SAO PAULO/SP",
+        "detail": "",
+        "origin": "AGF SHOPPING CAMPO LIMPO - ESTRADA DO CAMPO LIMPO, 459, PIRAJUSSARA - SAO PAULO/SP",
+        "status": 1,
+        "type": "RO"
+      },
+      {
+        "date": "03/03/2021 - 14:05",
+        "description": "Objeto postado",
+        "destination": "",
+        "detail": "",
+        "origin": "AGF SHOPPING CAMPO LIMPO - ESTRADA DO CAMPO LIMPO, 459, PIRAJUSSARA - SAO PAULO/SP",
+        "status": 1,
+        "type": "PO"
+      }
+    ],
+    "last_date": "05/03/2021 - 14:04",
+    "last_description": "Objeto entregue ao destinatário",
+    "last_destination": "",
+    "last_detail": "",
+    "last_origin": "CDD EXEMPLO",
+    "last_status": 1,
+    "last_type": "BDE",
+    "number": "ON732404576BR"
+  }
+]
+  ```
+
 ## 🤔 How to contribute
 
 - Fork this repository;
