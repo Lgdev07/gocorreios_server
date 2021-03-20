@@ -9,6 +9,7 @@ import (
 
 type GoCorreiosRepositoryInt interface {
 	Fare(fareInterf fare.Interface) ([]byte, error)
+	Tracking(cepsList []string) ([]byte, error)
 }
 
 type GoCorreiosRepository struct {
@@ -32,6 +33,17 @@ func (gc *GoCorreiosRepository) GetFare(fareModel model.Fare) ([]byte, error) {
 	}
 
 	result, err := gc.Repo.Fare(params)
+	if err != nil {
+		return nil, err
+	}
+
+	return result, nil
+}
+
+func (gc *GoCorreiosRepository) GetTracking(trackingModel model.Tracking) ([]byte, error) {
+	codesList := trackingModel.Codes
+
+	result, err := gc.Repo.Tracking(codesList)
 	if err != nil {
 		return nil, err
 	}

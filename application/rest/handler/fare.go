@@ -5,6 +5,8 @@ import (
 
 	"github.com/Lgdev07/gocorreios_server/domain/model"
 	"github.com/Lgdev07/gocorreios_server/domain/usecase"
+	"github.com/Lgdev07/gocorreios_server/infrastructure/repository"
+	"github.com/Lgdev07/gocorreios_server/infrastructure/services"
 	"github.com/labstack/echo/v4"
 )
 
@@ -26,4 +28,18 @@ func (f *FareHandler) Show(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, result)
+}
+
+func NewFareHandler() *FareHandler {
+	fareRepository := repository.GoCorreiosRepository{
+		Repo: &services.GoCorreiosService{},
+	}
+	fareUseCase := usecase.FareUseCase{
+		FareRepository: &fareRepository,
+	}
+	fareHandler := &FareHandler{
+		FareUseCase: fareUseCase,
+	}
+
+	return fareHandler
 }
