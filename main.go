@@ -13,7 +13,9 @@ func main() {
 
 	InitRoutes(e)
 
-	e.Use(middleware.CORS())
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"https://gocorreiosweb-lgdev07.vercel.app"},
+	}))
 
 	port := os.Getenv("PORT")
 	if port == "" {
