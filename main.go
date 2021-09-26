@@ -11,11 +11,12 @@ import (
 func main() {
 	e := echo.New()
 
-	InitRoutes(e)
-
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"https://gocorreiosweb-lgdev07.vercel.app"},
+		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
 	}))
+
+	InitRoutes(e)
 
 	port := os.Getenv("PORT")
 	if port == "" {
