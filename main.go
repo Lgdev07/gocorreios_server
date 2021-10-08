@@ -12,7 +12,7 @@ func main() {
 	e := echo.New()
 
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"https://gocorreiosweb-lgdev07.vercel.app"},
+		AllowOrigins: []string{"https://gocorreiosweb.vercel.app"},
 		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
 	}))
 
