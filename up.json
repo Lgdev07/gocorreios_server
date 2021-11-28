@@ -1,5 +1,8 @@
 {
   "name": "gocorreios-server1",
   "profile": "default",
-  "regions": ["us-west-2"]
+  "regions": ["us-west-2"], 
+  "cors": {
+    "allowed_origins": ["https://gocorreiosweb.vercel.app"]
+  }
 }
